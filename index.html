@@ -10,21 +10,23 @@
             font-family: Arial, sans-serif;
             font-weight: 200;
             text-align: center;
-            color : var(-tg-theme-text-color);
-            background-color: var(-tg-theme-bg-color);   
+            color: var(--tg-theme-text-color);
+            background-color: var(--tg-theme-bg-color);   
         }
         button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            color: white;
-            background-color:  black;
+            color: var(--tg-theme-button-text-color);
+            background-color: var(--tg-theme-button-color);
+            border: none;
+            border-radius: 5px;
         }
         button:hover {
-            color: black;
-            background-color: white;
+            color: var(--tg-theme-hint-color);
+            background-color: var(--tg-theme-secondary-bg-color);
         }
-    </style> 
+    </style>
 </head>
 <body>
     <h1>Ты даун</h1>
