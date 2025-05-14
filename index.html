@@ -27,22 +27,67 @@
             color: var(--tg-theme-hint-color);
             background-color: var(--tg-theme-secondary-bg-color);
         }
+        #game-container {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h1>Выберите игру</h1>
-    <button onclick="startGame('guess_number')">Угадай число</button>
-    <button onclick="startGame('knb')">Камень, ножницы, бумага</button>
-    <button onclick="exitApp()">Выход</button>
+    <h1 id="title">Выберите игру</h1>
+    <div id="menu-container">
+        <button onclick="startGuessNumber()">Угадай число</button>
+        <button onclick="startKnb()">Камень, ножницы, бумага</button>
+        <button onclick="exitApp()">Выход</button>
+    </div>
+
+    <div id="game-container">
+        <p id="game-message"></p>
+        <input id="game-input" type="text" placeholder="Введите число" />
+        <button onclick="submitGuess()">Отправить</button>
+        <button onclick="backToMenu()">Назад</button>
+    </div>
 
     <script>
-        function startGame(game) {
-            const tg = window.Telegram.WebApp;
-            tg.sendData(game); // Отправляет выбранную игру боту
+        const tg = window.Telegram.WebApp;
+        let secretNumber;
+
+        function startGuessNumber() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("title").innerText = "Угадай число";
+            document.getElementById("menu-container").style.display = "none";
+            document.getElementById("game-container").style.display = "block";
+            document.getElementById("game-message").innerText = "Я загадал число от 1 до 100. Попробуй угадать!";
+        }
+
+        function submitGuess() {
+            const guess = parseInt(document.getElementById("game-input").value);
+            if (isNaN(guess)) {
+                document.getElementById("game-message").innerText = "Введите корректное число!";
+                return;
+            }
+            if (guess < secretNumber) {
+                document.getElementById("game-message").innerText = "Моё число больше!";
+            } else if (guess > secretNumber) {
+                document.getElementById("game-message").innerText = "Моё число меньше!";
+            } else {
+                document.getElementById("game-message").innerText = "🎉 Правильно! Ты угадал!";
+            }
+        }
+
+        function startKnb() {
+            document.getElementById("title").innerText = "Камень, ножницы, бумага";
+            document.getElementById("menu-container").style.display = "none";
+            document.getElementById("game-container").style.display = "block";
+            document.getElementById("game-message").innerText = "Эта игра пока не реализована.";
+        }
+
+        function backToMenu() {
+            document.getElementById("title").innerText = "Выберите игру";
+            document.getElementById("menu-container").style.display = "block";
+            document.getElementById("game-container").style.display = "none";
         }
 
         function exitApp() {
-            const tg = window.Telegram.WebApp;
             tg.close(); // Закрывает мини-приложение
         }
     </script>
