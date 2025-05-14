@@ -51,7 +51,7 @@
 
         button:hover {
             background-color: var(--tg-theme-button-text-color);
-            color: rgb(147, 243, 147); /* основной цвет кнопки в качестве текста */
+            color: rgb(147, 243, 147);
             filter: invert(1) grayscale(0.2) contrast(1.2);
         }
 
@@ -86,17 +86,30 @@
         }
 
         #exit-button {
-            margin-top: 50px;
             background-color: crimson;
-            color: white; /* Увеличенный отступ сверху */
+            color: white;
+            margin-top: 50px;
         }
+        #exit-button:hover {
+            background-color: white;
+            color: crimson;
+            filter: none;
+        }
+
         #title {
             color: var(--tg-theme-text-color);
             font-size: 24px;
             margin-bottom: 250px; /* Уменьшенный отступ снизу */
         }
+
         #knb {
-            background-color: rgb(168, 168, 168)
+            background-color: rgb(168, 168, 168);
+            color: black;
+        }
+        #knb:hover {
+            background-color: black;
+            color: rgb(168, 168, 168);
+            filter: none;
         }
     </style>
 </head>
