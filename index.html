@@ -21,6 +21,7 @@
             background-color: var(--tg-theme-button-color);
             border: none;
             border-radius: 5px;
+            margin: 10px;
         }
         button:hover {
             color: var(--tg-theme-hint-color);
@@ -29,13 +30,20 @@
     </style>
 </head>
 <body>
-    <h1>Ты даун</h1>
-    <button onclick="sendMessage()">Скинуть фимоз</button>
+    <h1>Выберите игру</h1>
+    <button onclick="startGame('guess_number')">Угадай число</button>
+    <button onclick="startGame('knb')">Камень, ножницы, бумага</button>
+    <button onclick="exitApp()">Выход</button>
 
     <script>
-        function sendMessage() {
+        function startGame(game) {
             const tg = window.Telegram.WebApp;
-            tg.sendData("Отличный фимоз!!!"); // Отправляет данные боту
+            tg.sendData(game); // Отправляет выбранную игру боту
+        }
+
+        function exitApp() {
+            const tg = window.Telegram.WebApp;
+            tg.close(); // Закрывает мини-приложение
         }
     </script>
 </body>
