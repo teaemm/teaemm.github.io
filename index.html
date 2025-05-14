@@ -8,18 +8,20 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            font-weight: 200;
             text-align: center;
-            margin: 44px;
-            color : white;
-            background-color: black;
-            background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTJ4NHc2ZjhwcnZqNmY5NzN4Z214a2J4eTEzc28zdTdwbzB0YTBqcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K9MPm9A3CaSkw/giphy.gif')       
+            color : var(-tg-theme-text-color);
+            background-color: var(-tg-theme-bg-color);   
         }
         button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            color: white;
-            background-color:  moccasin;
+            color: var(-tg-theme-button-color);
+            background-color:  var(-tg-theme-button-text-color);
+        }
+        button:hover {
+            background-color: var(-tg-theme-button-hover-bg-color);
         }
     </style> 
 </head>
