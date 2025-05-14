@@ -9,24 +9,24 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px;
+            margin: 44px;
         }
         button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            color: moccasin;
         }
     </style>
 </head>
 <body>
-    <h1>Добро пожаловать в мини-приложение!</h1>
-    <p>Нажмите кнопку ниже, чтобы отправить сообщение в чат.</p>
-    <button onclick="sendMessage()">Отправить сообщение</button>
+    <h1>Ты даун</h1>
+    <button onclick="sendMessage()">Скинуть фимоз</button>
 
     <script>
         function sendMessage() {
             const tg = window.Telegram.WebApp;
-            tg.sendData("Привет из мини-приложения!"); // Отправляет данные боту
+            tg.sendData("Отличный фимоз!!!"); // Отправляет данные боту
         }
     </script>
 </body>
