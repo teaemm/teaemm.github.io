@@ -8,8 +8,8 @@
     <style>
         /* Общие стили */
         body {
-            font-family: 'Roboto', Arial, sans-serif;
-            font-weight: 300;
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-weight: 900;
             text-align: center;
             color: var(--tg-theme-text-color);
             background-color: var(--tg-theme-bg-color);
@@ -69,15 +69,20 @@
         }
 
         /* Контейнеры */
-        #menu-container, #game-container {
+        #menu-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Расположить кнопки в строку */
             align-items: center;
             justify-content: center;
+            gap: 10px; /* Расстояние между кнопками */
         }
 
         #game-container {
             display: none;
+        }
+
+        #exit-button {
+            margin-top: 30px; /* Увеличенный отступ сверху */
         }
     </style>
 </head>
@@ -86,13 +91,13 @@
     <div id="menu-container">
         <button onclick="startGuessNumber()">Угадай число</button>
         <button onclick="startKnb()">Камень, ножницы, бумага</button>
-        <button onclick="exitApp()">Выход</button>
+        <button id="exit-button" onclick="exitApp()">Выход</button>
     </div>
 
     <div id="game-container">
         <p id="game-message"></p>
         <input id="game-input" type="text" placeholder="Введите число" />
-        <button onclick="submitGuess()">Отправить</button>
+        <button onclick="submitGuess()">Подтвердить</button>
         <button onclick="backToMenu()">Назад</button>
     </div>
 
@@ -114,10 +119,14 @@
                 document.getElementById("game-message").innerText = "Введите корректное число!";
                 return;
             }
-            if (guess < secretNumber) {
-                document.getElementById("game-message").innerText = "Моё число больше!";
+            if (guess < 1) {
+                document.getElementById("game-message").innerText = "Я загадал число от 1!";
+            } else if (guess > 100) {
+                document.getElementById("game-message").innerText = "Я загадал число до 100!";
             } else if (guess > secretNumber) {
-                document.getElementById("game-message").innerText = "Моё число меньше!";
+                document.getElementById("game-message").innerText = "Мое число меньше!";
+            } else if (guess < secretNumber) {
+                document.getElementById("game-message").innerText = "Мое число больше!";
             } else {
                 document.getElementById("game-message").innerText = "🎉 Правильно! Ты угадал!";
             }
