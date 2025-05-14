@@ -50,8 +50,9 @@
         }
 
         button:hover {
-            background-color: var(--tg-theme-secondary-bg-color);
-            color: var(--tg-theme-hint-color);
+            background-color: var(--tg-theme-button-text-color);
+            color: rgb(147, 243, 147); /* основной цвет кнопки в качестве текста */
+            filter: invert(1) grayscale(0.2) contrast(1.2);
         }
 
         /* Поле ввода */
@@ -103,7 +104,7 @@
     <h1 id="title">Выберите игру</h1>
     <div id="menu-container">
         <button onclick="startGuessNumber()">Угадай число</button>
-        <button id= "knb" onclick="startKnb()">Камень, ножницы, бумага</button>
+        <button id="knb" onclick="startKnb()">Камень, ножницы, бумага</button>
         <button id="exit-button" onclick="exitApp()">Выход</button>
     </div>
 
