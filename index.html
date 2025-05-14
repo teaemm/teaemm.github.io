@@ -94,13 +94,16 @@
             font-size: 24px;
             margin-bottom: 250px; /* Уменьшенный отступ снизу */
         }
+        #knb {
+            background-color: rgb(168, 168, 168)
+        }
     </style>
 </head>
 <body>
     <h1 id="title">Выберите игру</h1>
     <div id="menu-container">
         <button onclick="startGuessNumber()">Угадай число</button>
-        <button onclick="startKnb()">Камень, ножницы, бумага</button>
+        <button id= "knb" onclick="startKnb()">Камень, ножницы, бумага</button>
         <button id="exit-button" onclick="exitApp()">Выход</button>
     </div>
 
