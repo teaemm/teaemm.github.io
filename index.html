@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мини-приложение</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать в мини-приложение!</h1>
+    <p>Нажмите кнопку ниже, чтобы отправить сообщение в чат.</p>
+    <button onclick="sendMessage()">Отправить сообщение</button>
+
+    <script>
+        function sendMessage() {
+            const tg = window.Telegram.WebApp;
+            tg.sendData("Привет из мини-приложения!"); // Отправляет данные боту
+        }
+    </script>
+</body>
+</html>
