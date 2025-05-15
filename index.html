@@ -103,11 +103,11 @@
 
         #knb {
             background-color: rgb(168, 168, 168);
-            color: black;
+            color: rgb(255, 255, 255);
         }
         #knb:hover {
             background-color: rgb(100, 100, 100);
-            color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
             filter: none;
         }
     </style>
@@ -124,7 +124,7 @@
         <p id="game-message"></p>
         <input id="game-input" type="text" placeholder="Введите число" />
         <button onclick="submitGuess()">Подтвердить</button>
-        <button onclick="backToMenu()">Назад</button>
+        <button id="exit-button" onclick="backToMenu()">Назад</button>
     </div>
 
     <script>
