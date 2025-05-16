@@ -72,6 +72,26 @@
             border-color: var(--tg-theme-button-color);
         }
 
+        #game-input {
+            color: #222;
+            background: rgba(255,255,255,0.85);
+            border: 2px solid var(--tg-theme-hint-color);
+            border-radius: 10px;
+            padding: 12px 18px;
+            font-size: 18px;
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-weight: 900;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        #game-input:focus {
+            border-color: rgb(147, 243, 147);
+            box-shadow: 0 4px 16px rgba(147,243,147,0.15);
+            background: #fff;
+        }
+
         /* Контейнеры */
         #menu-container {
             display: flex;
@@ -108,10 +128,6 @@
         #knb:hover {
             background-color: rgb(231, 136, 255);
             color: rgb(0, 0, 0);
-        }
-        #game-input {
-            color: black;
-            background-color: rgb(255, 255, 255);
         }
 
     </style>
