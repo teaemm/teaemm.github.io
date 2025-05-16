@@ -102,6 +102,7 @@
         }
 
         #game-container {
+            display: none;
             min-height: 120px; /* подберите под ваш дизайн */
         }
 
@@ -190,7 +191,7 @@
             document.getElementById("knb-buttons").style.display = "none";
             document.getElementById("game-input").style.display = "inline-block";
             document.getElementById("score").style.display = "none"; // Скрываем счет
-            showMessageWithAnimation("Я загадал число от 1 до 100. Попробуй угадать!");
+            document.getElementById("Я загадал число от 1 до 100. Попробуй угадать!");
         }
 
         function submitGuess() {
