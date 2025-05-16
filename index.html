@@ -171,6 +171,7 @@
             <button onclick="playKnb('Ножницы')">Ножницы</button>
             <button onclick="playKnb('Бумага')">Бумага</button>
         </div>
+        <input id="game-input" type="text" placeholder="Введите число" />
         <button id="exit-button" onclick="backToMenu()">Назад</button>
     </div>
 
@@ -261,6 +262,8 @@
             document.getElementById("title").innerText = "Выберите игру";
             document.getElementById("menu-container").style.display = "block";
             document.getElementById("game-container").style.display = "none";
+            playerScore = 0;
+            botScore = 0;
         }
 
         function exitApp() {
