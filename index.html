@@ -101,16 +101,9 @@
             gap: 10px; /* Расстояние между кнопками */
         }
 
-        #game-container-knb {
+        #game-container {
             display: none;
             min-height: 120px; /* подберите под ваш дизайн */
-        }
-        #game-container-number {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px; /* Расстояние между кнопками */      
         }
 
         #knb-buttons {            
@@ -170,7 +163,7 @@
         <button id="exit-button" onclick="exitApp()">Выход</button>
     </div>
 
-    <div id="game-container-knb">
+    <div id="game-container">
         <p id="game-message"></p>
         <p id="score">Счет: Игрок 0 - 0 Бот</p>
         <div id="knb-buttons">
@@ -180,9 +173,6 @@
         </div>
         <button id="exit-button" onclick="backToMenu()">Назад</button>
     </div>
-    <div id="game-container-number">
-        <input type="text" id="game-input" placeholder="Введите число от 1 до 100" />
-        <button onclick="submitGuess()">Угадать</button>
 
     
 
@@ -199,6 +189,7 @@
             document.getElementById("game-container").style.display = "block";
             document.getElementById("knb-buttons").style.display = "none";
             document.getElementById("game-input").style.display = "inline-block";
+            document.getElementById("score").style.display = "none"; // Скрываем счет
             showMessageWithAnimation("Я загадал число от 1 до 100. Попробуй угадать!");
         }
 
@@ -233,6 +224,7 @@
             document.getElementById("game-container").style.display = "block";
             document.getElementById("knb-buttons").style.display = "flex";
             document.getElementById("game-input").style.display = "none";
+            document.getElementById("score").style.display = "block"; // Показываем счет
             showMessageWithAnimation("Выберите ваш вариант:");
         }
 
