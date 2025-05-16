@@ -178,6 +178,12 @@
             }
         }
 
+        document.getElementById("game-input").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                submitGuess();
+            }
+        });
+
         function startKnb() {
             document.getElementById("title").innerText = "Камень, ножницы, бумага";
             document.getElementById("menu-container").style.display = "none";
